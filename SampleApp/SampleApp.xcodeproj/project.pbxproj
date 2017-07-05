@@ -10,9 +10,10 @@
 		14F692811F0D4EE300564955 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692781F0D4EE300564955 /* AppDelegate.swift */; };
 		14F692821F0D4EE300564955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F692791F0D4EE300564955 /* Assets.xcassets */; };
 		14F692831F0D4EE300564955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F6927A1F0D4EE300564955 /* LaunchScreen.storyboard */; };
-		14F692861F0D4EE300564955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692801F0D4EE300564955 /* ViewController.swift */; };
 		14F692971F0D50B700564955 /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F6928D1F0D4F2300564955 /* SKMenuDrawerViewController.framework */; };
 		14F692981F0D50B700564955 /* SKMenuDrawerViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14F6928D1F0D4F2300564955 /* SKMenuDrawerViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14F6929D1F0D54A400564955 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6929C1F0D54A400564955 /* MenuViewController.swift */; };
+		14F6929F1F0D54BD00564955 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6929E1F0D54BD00564955 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,9 @@
 		14F692791F0D4EE300564955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14F6927B1F0D4EE300564955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14F6927E1F0D4EE300564955 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14F692801F0D4EE300564955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SKMenuDrawerViewController.xcodeproj; path = ../SKMenuDrawerViewController.xcodeproj; sourceTree = "<group>"; };
+		14F6929C1F0D54A400564955 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		14F6929E1F0D54BD00564955 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,8 @@
 		14F6927F1F0D4EE300564955 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				14F692801F0D4EE300564955 /* ViewController.swift */,
+				14F6929E1F0D54BD00564955 /* FeedViewController.swift */,
+				14F6929C1F0D54A400564955 /* MenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -226,7 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F692861F0D4EE300564955 /* ViewController.swift in Sources */,
+				14F6929D1F0D54A400564955 /* MenuViewController.swift in Sources */,
+				14F6929F1F0D54BD00564955 /* FeedViewController.swift in Sources */,
 				14F692811F0D4EE300564955 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
