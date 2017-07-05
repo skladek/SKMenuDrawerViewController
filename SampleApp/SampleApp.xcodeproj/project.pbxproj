@@ -15,6 +15,23 @@
 		14F692861F0D4EE300564955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692801F0D4EE300564955 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		14F6928C1F0D4F2300564955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14416D231F0D35A300E0065C;
+			remoteInfo = SKMenuDrawerViewController;
+		};
+		14F6928E1F0D4F2300564955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14416D2C1F0D35A300E0065C;
+			remoteInfo = SKMenuDrawerViewControllerTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		14F692451F0D4E8A00564955 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F692781F0D4EE300564955 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -23,6 +40,7 @@
 		14F6927D1F0D4EE300564955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14F6927E1F0D4EE300564955 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F692801F0D4EE300564955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SKMenuDrawerViewController.xcodeproj; path = ../SKMenuDrawerViewController.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +59,7 @@
 			children = (
 				14F692761F0D4EE300564955 /* SampleApp */,
 				14F692461F0D4E8A00564955 /* Products */,
+				14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +98,15 @@
 				14F692801F0D4EE300564955 /* ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		14F692881F0D4F2300564955 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14F6928D1F0D4F2300564955 /* SKMenuDrawerViewController.framework */,
+				14F6928F1F0D4F2300564955 /* SKMenuDrawerViewControllerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,12 +157,35 @@
 			mainGroup = 14F6923C1F0D4E8A00564955;
 			productRefGroup = 14F692461F0D4E8A00564955 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 14F692881F0D4F2300564955 /* Products */;
+					ProjectRef = 14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				14F692441F0D4E8A00564955 /* SampleApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		14F6928D1F0D4F2300564955 /* SKMenuDrawerViewController.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SKMenuDrawerViewController.framework;
+			remoteRef = 14F6928C1F0D4F2300564955 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		14F6928F1F0D4F2300564955 /* SKMenuDrawerViewControllerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SKMenuDrawerViewControllerTests.xctest;
+			remoteRef = 14F6928E1F0D4F2300564955 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		14F692431F0D4E8A00564955 /* Resources */ = {
@@ -320,6 +371,7 @@
 				14F6926F1F0D4E8B00564955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
