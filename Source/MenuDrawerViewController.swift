@@ -22,6 +22,13 @@ open class MenuDrawerViewController: UIViewController {
 
         view.backgroundColor = .blue
 
+        if let contentView = contentViewController.view {
+            addChildViewController(contentViewController)
+            view.addSubview(contentView)
+
+            contentViewController.didMove(toParentViewController: self)
+        }
+
         if let menuView = menuViewController.view {
             menuView.translatesAutoresizingMaskIntoConstraints = false
             addChildViewController(menuViewController)
