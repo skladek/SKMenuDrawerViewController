@@ -10,9 +10,9 @@
 		14F692811F0D4EE300564955 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692781F0D4EE300564955 /* AppDelegate.swift */; };
 		14F692821F0D4EE300564955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F692791F0D4EE300564955 /* Assets.xcassets */; };
 		14F692831F0D4EE300564955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F6927A1F0D4EE300564955 /* LaunchScreen.storyboard */; };
-		14F692841F0D4EE300564955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F6927C1F0D4EE300564955 /* Main.storyboard */; };
-		14F692851F0D4EE300564955 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F6927E1F0D4EE300564955 /* Info.plist */; };
 		14F692861F0D4EE300564955 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692801F0D4EE300564955 /* ViewController.swift */; };
+		14F692971F0D50B700564955 /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F6928D1F0D4F2300564955 /* SKMenuDrawerViewController.framework */; };
+		14F692981F0D50B700564955 /* SKMenuDrawerViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14F6928D1F0D4F2300564955 /* SKMenuDrawerViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +30,34 @@
 			remoteGlobalIDString = 14416D2C1F0D35A300E0065C;
 			remoteInfo = SKMenuDrawerViewControllerTests;
 		};
+		14F692991F0D50B700564955 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14416D221F0D35A300E0065C;
+			remoteInfo = SKMenuDrawerViewController;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14F6929B1F0D50B700564955 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14F692981F0D50B700564955 /* SKMenuDrawerViewController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		14F692451F0D4E8A00564955 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F692781F0D4EE300564955 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F692791F0D4EE300564955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14F6927B1F0D4EE300564955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		14F6927D1F0D4EE300564955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14F6927E1F0D4EE300564955 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F692801F0D4EE300564955 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14F692871F0D4F2300564955 /* SKMenuDrawerViewController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SKMenuDrawerViewController.xcodeproj; path = ../SKMenuDrawerViewController.xcodeproj; sourceTree = "<group>"; };
@@ -48,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F692971F0D50B700564955 /* SKMenuDrawerViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +107,6 @@
 				14F692781F0D4EE300564955 /* AppDelegate.swift */,
 				14F692791F0D4EE300564955 /* Assets.xcassets */,
 				14F6927A1F0D4EE300564955 /* LaunchScreen.storyboard */,
-				14F6927C1F0D4EE300564955 /* Main.storyboard */,
 				14F6927E1F0D4EE300564955 /* Info.plist */,
 			);
 			path = Application;
@@ -119,10 +139,12 @@
 				14F692411F0D4E8A00564955 /* Sources */,
 				14F692421F0D4E8A00564955 /* Frameworks */,
 				14F692431F0D4E8A00564955 /* Resources */,
+				14F6929B1F0D50B700564955 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14F6929A1F0D50B700564955 /* PBXTargetDependency */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -192,8 +214,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F692851F0D4EE300564955 /* Info.plist in Resources */,
-				14F692841F0D4EE300564955 /* Main.storyboard in Resources */,
 				14F692821F0D4EE300564955 /* Assets.xcassets in Resources */,
 				14F692831F0D4EE300564955 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -213,6 +233,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		14F6929A1F0D50B700564955 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SKMenuDrawerViewController;
+			targetProxy = 14F692991F0D50B700564955 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		14F6927A1F0D4EE300564955 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -220,14 +248,6 @@
 				14F6927B1F0D4EE300564955 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		14F6927C1F0D4EE300564955 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14F6927D1F0D4EE300564955 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -329,9 +349,10 @@
 		14F6926E1F0D4E8B00564955 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MV978XDK83;
-				INFOPLIST_FILE = SampleApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = skladek.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -342,9 +363,10 @@
 		14F6926F1F0D4E8B00564955 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MV978XDK83;
-				INFOPLIST_FILE = SampleApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SampleApp/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = skladek.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
