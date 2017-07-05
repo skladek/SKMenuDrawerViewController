@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14416D2D1F0D35A300E0065C /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14416D231F0D35A300E0065C /* SKMenuDrawerViewController.framework */; };
-		14416D441F0D35C500E0065C /* SKMenuDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */; };
+		14416D441F0D35C500E0065C /* SKMenuDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14416D481F0D35C900E0065C /* SKMenuDrawerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */; };
 		3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */; };
 		37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */; };
@@ -521,6 +521,7 @@
 				14416D391F0D35A300E0065C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14416D3A1F0D35A300E0065C /* Build configuration list for PBXNativeTarget "SKMenuDrawerViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +530,7 @@
 				14416D3C1F0D35A300E0065C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

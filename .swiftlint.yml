@@ -1,0 +1,8 @@
+included:
+  - Source
+
+excluded:
+  - Pods
+
+disabled_rules:
+  - line_length

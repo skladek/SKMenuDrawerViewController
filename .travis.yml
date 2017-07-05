@@ -1,0 +1,7 @@
+language: swift
+osx_image: xcode8.3
+script: fastlane test
+xcode_project: SKMenuDrawerViewController.xcodeproj
+xcode_scheme: SKMenuDrawerViewController
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
