@@ -10,6 +10,8 @@
 		14416D2D1F0D35A300E0065C /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14416D231F0D35A300E0065C /* SKMenuDrawerViewController.framework */; };
 		14416D441F0D35C500E0065C /* SKMenuDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */; };
 		14416D481F0D35C900E0065C /* SKMenuDrawerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */; };
+		3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */; };
+		37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,12 @@
 		14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMenuDrawerViewController.h; sourceTree = "<group>"; };
 		14416D411F0D35C500E0065C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMenuDrawerViewControllerTests.swift; sourceTree = "<group>"; };
+		24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKMenuDrawerViewControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; sourceTree = "<group>"; };
+		63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController.release.xcconfig"; sourceTree = "<group>"; };
+		959334601693B4611EC5A8CC /* Pods-SKMenuDrawerViewControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewControllerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKMenuDrawerViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56BDE8401166D05E7B5E21B /* Pods-SKMenuDrawerViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +53,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				14416D2D1F0D35A300E0065C /* SKMenuDrawerViewController.framework in Frameworks */,
+				3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0212316874A2D4A76E2B1CB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */,
+				24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		14416D191F0D35A300E0065C = {
 			isa = PBXGroup;
 			children = (
 				14416D3D1F0D35C500E0065C /* Source */,
 				14416D401F0D35C500E0065C /* Tests */,
 				14416D241F0D35A300E0065C /* Products */,
+				BE170AE422671D0D9A99C99E /* Pods */,
+				0212316874A2D4A76E2B1CB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +107,17 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		BE170AE422671D0D9A99C99E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F56BDE8401166D05E7B5E21B /* Pods-SKMenuDrawerViewController.debug.xcconfig */,
+				63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */,
+				959334601693B4611EC5A8CC /* Pods-SKMenuDrawerViewControllerTests.debug.xcconfig */,
+				5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,10 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14416D371F0D35A300E0065C /* Build configuration list for PBXNativeTarget "SKMenuDrawerViewController" */;
 			buildPhases = (
+				7F91EDA5D46A124E8FCA81B3 /* [CP] Check Pods Manifest.lock */,
 				14416D1E1F0D35A300E0065C /* Sources */,
 				14416D1F1F0D35A300E0065C /* Frameworks */,
 				14416D201F0D35A300E0065C /* Headers */,
 				14416D211F0D35A300E0065C /* Resources */,
+				1B23CD7DF0EDA9BB31496F7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14416D3A1F0D35A300E0065C /* Build configuration list for PBXNativeTarget "SKMenuDrawerViewControllerTests" */;
 			buildPhases = (
+				C6D6049F141425A2C634A85D /* [CP] Check Pods Manifest.lock */,
 				14416D281F0D35A300E0065C /* Sources */,
 				14416D291F0D35A300E0065C /* Frameworks */,
 				14416D2A1F0D35A300E0065C /* Resources */,
+				C5ED5762662FCEA0EF3E34BD /* [CP] Embed Pods Frameworks */,
+				93A9DE0FFF6C1442287995A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +229,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B23CD7DF0EDA9BB31496F7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F91EDA5D46A124E8FCA81B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		93A9DE0FFF6C1442287995A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5ED5762662FCEA0EF3E34BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6D6049F141425A2C634A85D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14416D1E1F0D35A300E0065C /* Sources */ = {
@@ -323,6 +438,7 @@
 		};
 		14416D381F0D35A300E0065C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F56BDE8401166D05E7B5E21B /* Pods-SKMenuDrawerViewController.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -342,6 +458,7 @@
 		};
 		14416D391F0D35A300E0065C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -361,6 +478,7 @@
 		};
 		14416D3B1F0D35A300E0065C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 959334601693B4611EC5A8CC /* Pods-SKMenuDrawerViewControllerTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = MV978XDK83;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -373,6 +491,7 @@
 		};
 		14416D3C1F0D35A300E0065C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = MV978XDK83;
 				INFOPLIST_FILE = Tests/Info.plist;
