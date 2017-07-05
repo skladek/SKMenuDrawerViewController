@@ -14,3 +14,8 @@ target 'SKMenuDrawerViewControllerTests' do
 	pod 'Nimble', '= 7.0.0'
 	pod 'Quick', '= 1.1.0'
 end
+
+target 'SampleApp' do
+	project 'SampleApp/SampleApp.xcodeproj'
+	pod 'SKTableViewDataSource', '= 1.0.2'
+end

@@ -17,6 +17,27 @@ open class MenuDrawerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    public func rootContentViewController(_ viewController: UIViewController) {
+        guard let newContentView = viewController.view,
+            let oldContentView = contentViewController.view else {
+                return
+        }
+
+        addChildViewController(viewController)
+        viewController.didMove(toParentViewController: self)
+        newContentView.alpha = 0.0
+        view.insertSubview(newContentView, aboveSubview: oldContentView)
+
+        UIView.animate(withDuration: 0.25, animations: {
+            newContentView.alpha = 1.0
+        }) { [weak self] (_) in
+            oldContentView.removeFromSuperview()
+            self?.contentViewController.willMove(toParentViewController: nil)
+            self?.contentViewController.removeFromParentViewController()
+            self?.contentViewController = viewController
+        }
+    }
+
     open override func viewDidLoad() {
         super.viewDidLoad()
 

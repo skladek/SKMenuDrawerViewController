@@ -503,7 +503,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959334601693B4611EC5A8CC /* Pods-SKMenuDrawerViewControllerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = MV978XDK83;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -517,7 +516,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = MV978XDK83;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
