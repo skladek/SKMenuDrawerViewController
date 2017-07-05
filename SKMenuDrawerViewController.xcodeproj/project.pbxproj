@@ -10,6 +10,7 @@
 		14416D2D1F0D35A300E0065C /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14416D231F0D35A300E0065C /* SKMenuDrawerViewController.framework */; };
 		14416D441F0D35C500E0065C /* SKMenuDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14416D481F0D35C900E0065C /* SKMenuDrawerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */; };
+		14F6923B1F0D4DB500564955 /* MenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */; };
 		3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */; };
 		37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMenuDrawerViewController.h; sourceTree = "<group>"; };
 		14416D411F0D35C500E0065C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMenuDrawerViewControllerTests.swift; sourceTree = "<group>"; };
+		14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewController.swift; sourceTree = "<group>"; };
 		24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKMenuDrawerViewControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 		63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				14416D3E1F0D35C500E0065C /* Info.plist */,
+				14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */,
 				14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */,
 			);
 			path = Source;
@@ -142,6 +145,7 @@
 				14416D201F0D35A300E0065C /* Headers */,
 				14416D211F0D35A300E0065C /* Resources */,
 				1B23CD7DF0EDA9BB31496F7A /* [CP] Copy Pods Resources */,
+				14F692901F0D4FCA00564955 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -186,6 +190,7 @@
 					14416D221F0D35A300E0065C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MV978XDK83;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					14416D2B1F0D35A300E0065C = {
@@ -231,6 +236,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14F692901F0D4FCA00564955 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
+		};
 		1B23CD7DF0EDA9BB31496F7A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F6923B1F0D4DB500564955 /* MenuDrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F56BDE8401166D05E7B5E21B /* Pods-SKMenuDrawerViewController.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MV978XDK83;
@@ -452,6 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = skladek.SKMenuDrawerViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -460,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MV978XDK83;
@@ -480,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 959334601693B4611EC5A8CC /* Pods-SKMenuDrawerViewControllerTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = MV978XDK83;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -493,6 +517,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = MV978XDK83;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
