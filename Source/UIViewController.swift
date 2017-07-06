@@ -1,7 +1,11 @@
 import Foundation
 
 extension UIViewController {
-    open func toggleMenu(animated: Bool = true) {
+    open func setRootContentViewController(_ viewController: UIViewController) {
+        parent?.setRootContentViewController(viewController)
+    }
+
+    open func toggleMenu() {
         parent?.toggleMenu()
     }
 }

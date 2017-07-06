@@ -66,8 +66,8 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 }
 
                 it("Should set the constraint constant to 0 on the second menu toggle") {
-                    unitUnderTest.toggleMenu(animated: false)
-                    unitUnderTest.toggleMenu(animated: false)
+                    unitUnderTest.toggleMenu()
+                    unitUnderTest.toggleMenu()
                     expect(unitUnderTest.menuRightConstraint?.constant).to(equal(0))
                 }
             }
@@ -133,20 +133,6 @@ class MenuDrawerViewControllerSpec: QuickSpec {
 
                 it("Should eventually set the to view controller as the content view controller") {
                     expect(unitUnderTest.contentViewController).toEventually(equal(toViewController))
-                }
-            }
-
-            context("menuAnimationDuration(animated:)") {
-                beforeEach {
-                    unitUnderTest = MenuDrawerViewController(contentViewController: UIViewController(), menuViewController: UIViewController())
-                }
-
-                it("Should return 0.0 if animated is false") {
-                    expect(unitUnderTest.menuAnimationDuration(animated: false)).to(equal(0.0))
-                }
-
-                it("Should return the menu animation duration constant if animated is true") {
-                    expect(unitUnderTest.menuAnimationDuration(animated: true)).to(equal(MenuDrawerViewController.animationDuration))
                 }
             }
         }
