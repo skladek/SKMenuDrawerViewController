@@ -65,11 +65,6 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                     unitUnderTest.view.layoutIfNeeded()
                 }
 
-                it("Should set the constraint constant to the width of the menu view controller") {
-                    unitUnderTest.toggleMenu(animated: false)
-                    expect(unitUnderTest.menuRightConstraint?.constant).to(equal(ceil(menuViewController.view.frame.width)))
-                }
-
                 it("Should set the constraint constant to 0 on the second menu toggle") {
                     unitUnderTest.toggleMenu(animated: false)
                     unitUnderTest.toggleMenu(animated: false)
@@ -150,8 +145,8 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                     expect(unitUnderTest.menuAnimationDuration(animated: false)).to(equal(0.0))
                 }
 
-                it("Should return 0.25 if animated is true") {
-                    expect(unitUnderTest.menuAnimationDuration(animated: true)).to(equal(0.25))
+                it("Should return the menu animation duration constant if animated is true") {
+                    expect(unitUnderTest.menuAnimationDuration(animated: true)).to(equal(MenuDrawerViewController.animationDuration))
                 }
             }
         }

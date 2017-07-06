@@ -37,12 +37,8 @@ class ContentViewController: UIViewController {
         return backgroundColor
     }
 
-    @IBAction func toggleMenu() {
-        guard let parent = parent as? MenuDrawerViewController else {
-            return
-        }
-
-        parent.toggleMenu()
+    @IBAction func menuButtonTapped() {
+        parent?.toggleMenu()
     }
 
     override func viewDidLoad() {

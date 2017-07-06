@@ -2,6 +2,12 @@ import Foundation
 
 open class MenuDrawerViewController: UIViewController {
 
+    static let animationDuration = 0.33
+
+    static let menuWidthPercentage: CGFloat = 0.75
+
+    static let springDampening: CGFloat = 0.6
+
     var contentViewController: UIViewController
 
     var menuRightConstraint: NSLayoutConstraint?
@@ -24,13 +30,13 @@ open class MenuDrawerViewController: UIViewController {
         fadeFrom(contentViewController, to: viewController)
     }
 
-    public func toggleMenu(animated: Bool = true) {
-        let menuOffset = (menuRightConstraint?.constant == 0) ? ceil(menuViewController.view.frame.width) : 0
+    open override func toggleMenu(animated: Bool = true) {
+        let menuOffset = (menuRightConstraint?.constant == 0) ? ceil(view.frame.width * 0.75) : 0
         menuRightConstraint?.constant = menuOffset
 
         let duration = menuAnimationDuration(animated: animated)
 
-        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: MenuDrawerViewController.springDampening, initialSpringVelocity: 0, options: [], animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -47,14 +53,14 @@ open class MenuDrawerViewController: UIViewController {
         view.addSubview(viewController.view)
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[menuView]|", options: [], metrics: nil, views: ["menuView": viewController.view]))
 
-        let widthConstraint = NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.75, constant: 0.0)
+        let widthConstraint = NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: MenuDrawerViewController.menuWidthPercentage, constant: 0)
         widthConstraint.priority = UILayoutPriorityDefaultHigh
         view.addConstraint(widthConstraint)
 
-        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .lessThanOrEqual, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
         view.addConstraint(leftConstraint)
 
-        let menuConstraint = NSLayoutConstraint(item: viewController.view, attribute: .right, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let menuConstraint = NSLayoutConstraint(item: viewController.view, attribute: .right, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
         view.addConstraint(menuConstraint)
         menuRightConstraint = menuConstraint
 
@@ -62,7 +68,7 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     func fadeFrom(_ fromViewController: UIViewController, to toViewController: UIViewController) {
-        UIView.animate(withDuration: 0.25, animations: {
+        UIView.animate(withDuration: MenuDrawerViewController.animationDuration, animations: {
             fromViewController.view.alpha = 0.0
         }) { [weak self] (_) in
             fromViewController.view.removeFromSuperview()
@@ -73,7 +79,7 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     func menuAnimationDuration(animated: Bool) -> TimeInterval {
-        return (animated) ? 0.25 : 0.0
+        return (animated) ? MenuDrawerViewController.animationDuration : 0.0
     }
 
     open override func viewDidLoad() {
