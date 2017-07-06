@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentViewController" customModule="SampleApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="yGM-6A-f5s" id="ciP-zV-acm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yGM-6A-f5s">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjA-0T-DMF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <state key="normal" title="Toggle Menu">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="toggleMenu" destination="-1" eventType="touchUpInside" id="NWo-D1-KJu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UjA-0T-DMF" secondAttribute="trailing" id="XNY-vX-Iik"/>
+                <constraint firstItem="UjA-0T-DMF" firstAttribute="leading" secondItem="yGM-6A-f5s" secondAttribute="leading" id="XZp-zR-iM6"/>
+                <constraint firstItem="UjA-0T-DMF" firstAttribute="top" secondItem="yGM-6A-f5s" secondAttribute="top" id="nkZ-T4-Tlf"/>
+                <constraint firstAttribute="bottom" secondItem="UjA-0T-DMF" secondAttribute="bottom" id="xr9-rK-fwj"/>
+            </constraints>
+            <point key="canvasLocation" x="-60" y="-26"/>
+        </view>
+    </objects>
+</document>
