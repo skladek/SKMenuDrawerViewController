@@ -116,10 +116,6 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 it("Should eventually set the to view controller as the content view controller") {
                     expect(unitUnderTest.contentViewController).toEventually(equal(toViewController))
                 }
-
-                it("Should eventually add the to view as a subview") {
-                    expect(unitUnderTest.view.subviews).toEventually(contain(toViewController.view))
-                }
             }
         }
     }
