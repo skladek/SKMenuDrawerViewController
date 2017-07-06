@@ -12,6 +12,9 @@
 		14F6923B1F0D4DB500564955 /* MenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */; };
 		14F692B11F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */; };
 		14F692B31F0DB66700564955 /* MockMenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */; };
+		14F692C51F0E87D400564955 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692C41F0E87D400564955 /* UIViewController.swift */; };
+		14F692CA1F0E8D3A00564955 /* MockUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692C91F0E8D3A00564955 /* MockUIViewController.swift */; };
+		14F692CB1F0E8D3E00564955 /* UIViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692C71F0E8CF100564955 /* UIViewControllerSpec.swift */; };
 		3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */; };
 		37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +38,9 @@
 		14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewController.swift; sourceTree = "<group>"; };
 		14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewControllerSpec.swift; sourceTree = "<group>"; };
 		14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMenuDrawerViewController.swift; sourceTree = "<group>"; };
+		14F692C41F0E87D400564955 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		14F692C71F0E8CF100564955 /* UIViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpec.swift; sourceTree = "<group>"; };
+		14F692C91F0E8D3A00564955 /* MockUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIViewController.swift; sourceTree = "<group>"; };
 		24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKMenuDrawerViewControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 		63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 				14416D3E1F0D35C500E0065C /* Info.plist */,
 				14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */,
 				14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */,
+				14F692C41F0E87D400564955 /* UIViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -109,6 +116,8 @@
 				14416D411F0D35C500E0065C /* Info.plist */,
 				14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */,
 				14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */,
+				14F692C91F0E8D3A00564955 /* MockUIViewController.swift */,
+				14F692C71F0E8CF100564955 /* UIViewControllerSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F6923B1F0D4DB500564955 /* MenuDrawerViewController.swift in Sources */,
+				14F692C51F0E87D400564955 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F692B31F0DB66700564955 /* MockMenuDrawerViewController.swift in Sources */,
+				14F692CB1F0E8D3E00564955 /* UIViewControllerSpec.swift in Sources */,
+				14F692CA1F0E8D3A00564955 /* MockUIViewController.swift in Sources */,
 				14F692B11F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,6 @@ class MenuViewController: UIViewController {
         }
 
         tableView.dataSource = dataSource
-        view.backgroundColor = .yellow
     }
 }
 
@@ -41,6 +40,9 @@ extension MenuViewController: UITableViewDelegate {
         }
 
         let viewController = ContentViewController(color: color)
-        parentViewController.setRootContentViewController(viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        parentViewController.setRootContentViewController(navigationController)
+
+        parent?.toggleMenu()
     }
 }
