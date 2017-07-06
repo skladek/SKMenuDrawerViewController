@@ -4,6 +4,8 @@ open class MenuDrawerViewController: UIViewController {
 
     var contentViewController: UIViewController
 
+    var menuRightConstraint: NSLayoutConstraint?
+
     let menuViewController: UIViewController
 
     public init(contentViewController: UIViewController, menuViewController: UIViewController) {
@@ -22,6 +24,15 @@ open class MenuDrawerViewController: UIViewController {
         fadeFrom(contentViewController, to: viewController)
     }
 
+    public func toggleMenu() {
+        let menuOffset = (menuRightConstraint?.constant == 0) ? menuViewController.view.frame.width : 0
+        menuRightConstraint?.constant = menuOffset
+
+        UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: [], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
     func addContentViewController(_ viewController: UIViewController) {
         addChildViewController(viewController)
         view.insertSubview(viewController.view, at: 0)
@@ -32,10 +43,18 @@ open class MenuDrawerViewController: UIViewController {
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         addChildViewController(viewController)
         view.addSubview(viewController.view)
-        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.75, constant: 0.0))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[menuView]|", options: [], metrics: nil, views: ["menuView": viewController.view]))
+
+        let widthConstraint = NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.75, constant: 0.0)
+        widthConstraint.priority = UILayoutPriorityDefaultHigh
+        view.addConstraint(widthConstraint)
+
+        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .lessThanOrEqual, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(leftConstraint)
+
+        let menuConstraint = NSLayoutConstraint(item: viewController.view, attribute: .right, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(menuConstraint)
+        menuRightConstraint = menuConstraint
 
         viewController.didMove(toParentViewController: self)
     }

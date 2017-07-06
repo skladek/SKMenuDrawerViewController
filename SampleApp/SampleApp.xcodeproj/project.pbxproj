@@ -15,6 +15,7 @@
 		14F6929D1F0D54A400564955 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6929C1F0D54A400564955 /* MenuViewController.swift */; };
 		14F692A71F0D653E00564955 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692A61F0D653E00564955 /* ContentViewController.swift */; };
 		14F692AF1F0D6DE200564955 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F692AE1F0D6DE200564955 /* MenuViewController.xib */; };
+		14F692B51F0DBEA000564955 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F692B41F0DBEA000564955 /* ContentViewController.xib */; };
 		7D0E0C48A77A5C19653CCFC3 /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518C336245A9F80331BCD73A /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		14F6929C1F0D54A400564955 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		14F692A61F0D653E00564955 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		14F692AE1F0D6DE200564955 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		14F692B41F0DBEA000564955 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		518C336245A9F80331BCD73A /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D4643A02628769F70280546 /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C118BA37976B330465CBE0B /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				14F692A61F0D653E00564955 /* ContentViewController.swift */,
+				14F692B41F0DBEA000564955 /* ContentViewController.xib */,
 				14F6929C1F0D54A400564955 /* MenuViewController.swift */,
 				14F692AE1F0D6DE200564955 /* MenuViewController.xib */,
 			);
@@ -247,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F692B51F0DBEA000564955 /* ContentViewController.xib in Resources */,
 				14F692821F0D4EE300564955 /* Assets.xcassets in Resources */,
 				14F692AF1F0D6DE200564955 /* MenuViewController.xib in Resources */,
 				14F692831F0D4EE300564955 /* LaunchScreen.storyboard in Resources */,
