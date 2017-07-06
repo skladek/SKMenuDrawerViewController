@@ -6,20 +6,33 @@ import Quick
 
 class UIViewControllerSpec: QuickSpec {
     override func spec() {
-        var unitUnderTest: UIViewController!
+        var childViewController: UIViewController!
+        var unitUnderTest: MockUIViewController!
 
-        describe("MenuDrawerViewController") {
+        describe("UIViewController") {
             context("toggleMenu(animated:)") {
                 beforeEach {
-                    unitUnderTest = UIViewController()
+                    childViewController = UIViewController()
+                    unitUnderTest = MockUIViewController()
+                    unitUnderTest.addChildViewController(childViewController)
                 }
 
                 it("Should call toggleMenu on the parent view controller") {
-                    let parentViewController = MockUIViewController()
-                    parentViewController.addChildViewController(unitUnderTest)
-                    unitUnderTest.toggleMenu()
+                    childViewController.toggleMenu()
+                    expect(unitUnderTest.toggleMenuCalled).to(beTrue())
+                }
+            }
 
-                    expect(parentViewController.toggleMenuCalled).to(beTrue())
+            context("setRootContentViewController(_:)") {
+                beforeEach {
+                    childViewController = UIViewController()
+                    unitUnderTest = MockUIViewController()
+                    unitUnderTest.addChildViewController(childViewController)
+                }
+
+                it("Should call setRootContentViewController on the parent view controller") {
+                    childViewController.setRootContentViewController(UIViewController())
+                    expect(unitUnderTest.setRootViewControllerCalled).to(beTrue())
                 }
             }
         }
