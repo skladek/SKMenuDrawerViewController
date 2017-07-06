@@ -25,7 +25,7 @@ open class MenuDrawerViewController: UIViewController {
         return nil
     }
 
-    public func setRootContentViewController(_ viewController: UIViewController) {
+    open override func setRootContentViewController(_ viewController: UIViewController) {
         addContentViewController(viewController)
         fadeFrom(contentViewController, to: viewController)
     }
