@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'SKMenuDrawerViewController'
-  spec.version = '0.0.3'
+  spec.version = '0.0.4'
   spec.license = 'MIT'
   spec.summary = 'A simple side menu view controller.'
   spec.homepage = 'https://github.com/skladek/SKMenuDrawerViewController'
