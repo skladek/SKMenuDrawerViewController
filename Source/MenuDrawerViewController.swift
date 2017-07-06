@@ -24,11 +24,13 @@ open class MenuDrawerViewController: UIViewController {
         fadeFrom(contentViewController, to: viewController)
     }
 
-    public func toggleMenu() {
-        let menuOffset = (menuRightConstraint?.constant == 0) ? menuViewController.view.frame.width : 0
+    public func toggleMenu(animated: Bool = true) {
+        let menuOffset = (menuRightConstraint?.constant == 0) ? ceil(menuViewController.view.frame.width) : 0
         menuRightConstraint?.constant = menuOffset
 
-        UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: [], animations: {
+        let duration = menuAnimationDuration(animated: animated)
+
+        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 1.0, options: [], animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -68,6 +70,10 @@ open class MenuDrawerViewController: UIViewController {
             self?.contentViewController.removeFromParentViewController()
             self?.contentViewController = toViewController
         }
+    }
+
+    func menuAnimationDuration(animated: Bool) -> TimeInterval {
+        return (animated) ? 0.25 : 0.0
     }
 
     open override func viewDidLoad() {

@@ -54,6 +54,29 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 }
             }
 
+            context("toggleMenu()") {
+                var menuViewController: UIViewController!
+
+                beforeEach {
+                    menuViewController = UIViewController()
+                    unitUnderTest = MenuDrawerViewController(contentViewController: UIViewController(), menuViewController: menuViewController)
+                    expect(unitUnderTest.view).toNot(beNil())
+                    unitUnderTest.viewDidLoad()
+                    unitUnderTest.view.layoutIfNeeded()
+                }
+
+                it("Should set the constraint constant to the width of the menu view controller") {
+                    unitUnderTest.toggleMenu(animated: false)
+                    expect(unitUnderTest.menuRightConstraint?.constant).to(equal(ceil(menuViewController.view.frame.width)))
+                }
+
+                it("Should set the constraint constant to 0 on the second menu toggle") {
+                    unitUnderTest.toggleMenu(animated: false)
+                    unitUnderTest.toggleMenu(animated: false)
+                    expect(unitUnderTest.menuRightConstraint?.constant).to(equal(0))
+                }
+            }
+
             context("addContentViewController(_:)") {
                 var viewController: UIViewController!
 
@@ -115,6 +138,20 @@ class MenuDrawerViewControllerSpec: QuickSpec {
 
                 it("Should eventually set the to view controller as the content view controller") {
                     expect(unitUnderTest.contentViewController).toEventually(equal(toViewController))
+                }
+            }
+
+            context("menuAnimationDuration(animated:)") {
+                beforeEach {
+                    unitUnderTest = MenuDrawerViewController(contentViewController: UIViewController(), menuViewController: UIViewController())
+                }
+
+                it("Should return 0.0 if animated is false") {
+                    expect(unitUnderTest.menuAnimationDuration(animated: false)).to(equal(0.0))
+                }
+
+                it("Should return 0.25 if animated is true") {
+                    expect(unitUnderTest.menuAnimationDuration(animated: true)).to(equal(0.25))
                 }
             }
         }
