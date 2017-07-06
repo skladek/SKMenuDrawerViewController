@@ -41,6 +41,6 @@ extension MenuViewController: UITableViewDelegate {
         }
 
         let viewController = ContentViewController(color: color)
-        parentViewController.rootContentViewController(viewController)
+        parentViewController.setRootContentViewController(viewController)
     }
 }

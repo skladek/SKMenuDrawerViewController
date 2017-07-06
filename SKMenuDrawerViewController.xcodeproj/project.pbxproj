@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		14416D2D1F0D35A300E0065C /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14416D231F0D35A300E0065C /* SKMenuDrawerViewController.framework */; };
 		14416D441F0D35C500E0065C /* SKMenuDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		14416D481F0D35C900E0065C /* SKMenuDrawerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */; };
 		14F6923B1F0D4DB500564955 /* MenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */; };
+		14F692B11F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */; };
+		14F692B31F0DB66700564955 /* MockMenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */; };
 		3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */; };
 		37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */; };
 /* End PBXBuildFile section */
@@ -31,8 +32,9 @@
 		14416D3E1F0D35C500E0065C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMenuDrawerViewController.h; sourceTree = "<group>"; };
 		14416D411F0D35C500E0065C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMenuDrawerViewControllerTests.swift; sourceTree = "<group>"; };
 		14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewController.swift; sourceTree = "<group>"; };
+		14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewControllerSpec.swift; sourceTree = "<group>"; };
+		14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMenuDrawerViewController.swift; sourceTree = "<group>"; };
 		24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKMenuDrawerViewControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 		63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				14416D411F0D35C500E0065C /* Info.plist */,
-				14416D421F0D35C500E0065C /* SKMenuDrawerViewControllerTests.swift */,
+				14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */,
+				14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -340,7 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14416D481F0D35C900E0065C /* SKMenuDrawerViewControllerTests.swift in Sources */,
+				14F692B31F0DB66700564955 /* MockMenuDrawerViewController.swift in Sources */,
+				14F692B11F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

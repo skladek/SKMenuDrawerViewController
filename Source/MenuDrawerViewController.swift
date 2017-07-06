@@ -14,52 +14,47 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
 
-    public func rootContentViewController(_ viewController: UIViewController) {
-        guard let newContentView = viewController.view,
-            let oldContentView = contentViewController.view else {
-                return
-        }
+    public func setRootContentViewController(_ viewController: UIViewController) {
+        addContentViewController(viewController)
+        fadeFrom(contentViewController, to: viewController)
+    }
 
+    func addContentViewController(_ viewController: UIViewController) {
         addChildViewController(viewController)
+        view.insertSubview(viewController.view, at: 0)
         viewController.didMove(toParentViewController: self)
-        newContentView.alpha = 0.0
-        view.insertSubview(newContentView, aboveSubview: oldContentView)
+    }
 
+    func addMenuViewController(_ viewController: UIViewController) {
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        addChildViewController(viewController)
+        view.addSubview(viewController.view)
+        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.75, constant: 0.0))
+
+        viewController.didMove(toParentViewController: self)
+    }
+
+    func fadeFrom(_ fromViewController: UIViewController, to toViewController: UIViewController) {
         UIView.animate(withDuration: 0.25, animations: {
-            newContentView.alpha = 1.0
+            fromViewController.view.alpha = 0.0
         }) { [weak self] (_) in
-            oldContentView.removeFromSuperview()
+            fromViewController.view.removeFromSuperview()
             self?.contentViewController.willMove(toParentViewController: nil)
             self?.contentViewController.removeFromParentViewController()
-            self?.contentViewController = viewController
+            self?.contentViewController = toViewController
         }
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
-
-        if let contentView = contentViewController.view {
-            addChildViewController(contentViewController)
-            view.addSubview(contentView)
-
-            contentViewController.didMove(toParentViewController: self)
-        }
-
-        if let menuView = menuViewController.view {
-            menuView.translatesAutoresizingMaskIntoConstraints = false
-            addChildViewController(menuViewController)
-            view.addSubview(menuView)
-            view.addConstraint(NSLayoutConstraint(item: menuView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0))
-            view.addConstraint(NSLayoutConstraint(item: menuView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0))
-            view.addConstraint(NSLayoutConstraint(item: menuView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0))
-            view.addConstraint(NSLayoutConstraint(item: menuView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 0.75, constant: 0.0))
-
-            menuViewController.didMove(toParentViewController: self)
-        }
+        addContentViewController(contentViewController)
+        addMenuViewController(menuViewController)
     }
 }
