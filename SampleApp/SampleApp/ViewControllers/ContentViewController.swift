@@ -1,4 +1,5 @@
 import Foundation
+import SKMenuDrawerViewController
 import UIKit
 
 class ContentViewController: UIViewController {
@@ -34,6 +35,14 @@ class ContentViewController: UIViewController {
         }
 
         return backgroundColor
+    }
+
+    @IBAction func toggleMenu() {
+        guard let parent = parent as? MenuDrawerViewController else {
+            return
+        }
+
+        parent.toggleMenu()
     }
 
     override func viewDidLoad() {
