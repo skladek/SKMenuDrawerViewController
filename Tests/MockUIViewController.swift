@@ -8,7 +8,7 @@ class MockUIViewController: UIViewController {
         setRootViewControllerCalled = true
     }
 
-    override func toggleMenu(animated: Bool) {
+    override func toggleMenu() {
         toggleMenuCalled = true
     }
 }

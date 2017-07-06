@@ -5,7 +5,7 @@ extension UIViewController {
         parent?.setRootContentViewController(viewController)
     }
 
-    open func toggleMenu(animated: Bool = true) {
-        parent?.toggleMenu(animated: animated)
+    open func toggleMenu() {
+        parent?.toggleMenu()
     }
 }
