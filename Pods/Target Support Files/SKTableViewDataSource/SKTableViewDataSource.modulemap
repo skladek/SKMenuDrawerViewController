@@ -1,0 +1,6 @@
+framework module SKTableViewDataSource {
+  umbrella header "SKTableViewDataSource-umbrella.h"
+
+  export *
+  module * { export * }
+}
