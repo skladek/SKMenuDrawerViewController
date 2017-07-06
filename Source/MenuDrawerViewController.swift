@@ -30,7 +30,7 @@ open class MenuDrawerViewController: UIViewController {
         fadeFrom(contentViewController, to: viewController)
     }
 
-    public override func toggleMenu(animated: Bool = true) {
+    open override func toggleMenu(animated: Bool = true) {
         let menuOffset = (menuRightConstraint?.constant == 0) ? ceil(view.frame.width * 0.75) : 0
         menuRightConstraint?.constant = menuOffset
 
