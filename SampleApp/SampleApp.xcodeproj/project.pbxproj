@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14D1EEBA1F0F50EB005781E4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1EEB91F0F50EB005781E4 /* NavigationController.swift */; };
 		14F692811F0D4EE300564955 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692781F0D4EE300564955 /* AppDelegate.swift */; };
 		14F692821F0D4EE300564955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F692791F0D4EE300564955 /* Assets.xcassets */; };
 		14F692831F0D4EE300564955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F6927A1F0D4EE300564955 /* LaunchScreen.storyboard */; };
@@ -58,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		14D1EEB91F0F50EB005781E4 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		14F692451F0D4E8A00564955 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F692781F0D4EE300564955 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F692791F0D4EE300564955 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				14F692B41F0DBEA000564955 /* ContentViewController.xib */,
 				14F6929C1F0D54A400564955 /* MenuViewController.swift */,
 				14F692AE1F0D6DE200564955 /* MenuViewController.xib */,
+				14D1EEB91F0F50EB005781E4 /* NavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F6929D1F0D54A400564955 /* MenuViewController.swift in Sources */,
+				14D1EEBA1F0F50EB005781E4 /* NavigationController.swift in Sources */,
 				14F692A71F0D653E00564955 /* ContentViewController.swift in Sources */,
 				14F692811F0D4EE300564955 /* AppDelegate.swift in Sources */,
 			);
