@@ -6,25 +6,23 @@ import Quick
 
 class MenuDrawerViewControllerSpec: QuickSpec {
     override func spec() {
-        var unitUnderTest: MenuDrawerViewController!
+        var unitUnderTest: MenuDrawerViewController<MockMenuViewController>!
 
         describe("MenuDrawerViewController") {
             context("init(contentViewController:menuViewController:)") {
-                var contentViewController: UIViewController!
-                var menuViewController: UIViewController!
+                var menuViewController: MockMenuViewController!
 
                 beforeEach {
-                    contentViewController = UIViewController()
-                    menuViewController = UIViewController()
-                    unitUnderTest = MenuDrawerViewController(contentViewController: contentViewController, menuViewController: menuViewController)
-                }
-
-                it("Should set the content view controller") {
-                    expect(unitUnderTest.contentViewController).to(be(contentViewController))
+                    menuViewController = MockMenuViewController()
+                    unitUnderTest = MenuDrawerViewController(menuViewController: menuViewController)
                 }
 
                 it("Should set the menu view controller") {
                     expect(unitUnderTest.menuViewController).to(be(menuViewController))
+                }
+
+                it("Should call initialContentViewController on the menu view controller") {
+                    expect(menuViewController.initialContentViewControllerCalled).to(beTrue())
                 }
             }
 
@@ -41,7 +39,7 @@ class MenuDrawerViewControllerSpec: QuickSpec {
 
             context("setRootContentViewController(_:)") {
                 beforeEach {
-                    unitUnderTest = MockMenuDrawerViewController(contentViewController: UIViewController(), menuViewController: UIViewController())
+                    unitUnderTest = MockMenuDrawerViewController(menuViewController: MockMenuViewController())
                     unitUnderTest.setRootContentViewController(UIViewController())
                 }
 
@@ -55,11 +53,11 @@ class MenuDrawerViewControllerSpec: QuickSpec {
             }
 
             context("toggleMenu()") {
-                var menuViewController: UIViewController!
+                var menuViewController: MockMenuViewController!
 
                 beforeEach {
-                    menuViewController = UIViewController()
-                    unitUnderTest = MenuDrawerViewController(contentViewController: UIViewController(), menuViewController: menuViewController)
+                    menuViewController = MockMenuViewController()
+                    unitUnderTest = MenuDrawerViewController(menuViewController: menuViewController)
                     expect(unitUnderTest.view).toNot(beNil())
                     unitUnderTest.viewDidLoad()
                     unitUnderTest.view.layoutIfNeeded()
@@ -76,7 +74,7 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 var viewController: UIViewController!
 
                 beforeEach {
-                    unitUnderTest = MenuDrawerViewController(contentViewController: UIViewController(), menuViewController: UIViewController())
+                    unitUnderTest = MenuDrawerViewController(menuViewController: MockMenuViewController())
                     viewController = UIViewController()
                     unitUnderTest.addContentViewController(viewController)
                 }
@@ -94,7 +92,7 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 var viewController: UIViewController!
 
                 beforeEach {
-                    unitUnderTest = MenuDrawerViewController(contentViewController: UIViewController(), menuViewController: UIViewController())
+                    unitUnderTest = MenuDrawerViewController(menuViewController: MockMenuViewController())
                     viewController = UIViewController()
                     unitUnderTest.addMenuViewController(viewController)
                 }
@@ -115,7 +113,7 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 beforeEach {
                     fromViewController = UIViewController()
                     toViewController = UIViewController()
-                    unitUnderTest = MenuDrawerViewController(contentViewController: fromViewController, menuViewController: UIViewController())
+                    unitUnderTest = MenuDrawerViewController(menuViewController: MockMenuViewController())
                     unitUnderTest.fadeFrom(fromViewController, to: toViewController)
                 }
 

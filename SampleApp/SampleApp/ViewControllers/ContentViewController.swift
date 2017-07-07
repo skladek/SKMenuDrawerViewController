@@ -1,49 +1,21 @@
 import Foundation
-import SKMenuDrawerViewController
+import SKTableViewDataSource
 import UIKit
 
 class ContentViewController: UIViewController {
+    var dataSource: TableViewDataSource<String>?
 
-    enum Color: Int {
-        case red = 0
-        case green
-        case blue
-    }
+    let jobs = ["Content Row 1", "Content Row 2", "Content Row 3", "Content Row 4", "Content Row 5"]
 
-    let color: Color
-
-    init(color: Color) {
-        self.color = color
-
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func backgroundColor(for color: Color) -> UIColor {
-        var backgroundColor = UIColor.white
-
-        switch color {
-        case .blue:
-            backgroundColor = .blue
-        case .green:
-            backgroundColor = .green
-        case .red:
-            backgroundColor = .red
-        }
-
-        return backgroundColor
-    }
-
-    @IBAction func menuButtonTapped() {
-        parent?.toggleMenu()
-    }
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = backgroundColor(for: color)
+        dataSource = TableViewDataSource(objects: jobs, cell: UITableViewCell.self, cellPresenter: { (cell, object) in
+            cell.textLabel?.text = object
+        })
+
+        tableView.dataSource = dataSource
     }
 }
