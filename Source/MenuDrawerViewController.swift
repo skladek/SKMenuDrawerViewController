@@ -50,6 +50,7 @@ open class MenuDrawerViewController: UIViewController {
     func addContentViewController(_ viewController: UIViewController) {
         addChildViewController(viewController)
         view.insertSubview(viewController.view, at: 0)
+        view.layoutIfNeeded()
         viewController.didMove(toParentViewController: self)
     }
 
