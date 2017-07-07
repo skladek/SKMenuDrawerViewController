@@ -2,15 +2,15 @@ import Foundation
 
 open class MenuDrawerViewController: UIViewController {
 
-    static let animationDuration = 0.33
+    static let animationDuration = 0.25
 
     static let menuWidthPercentage: CGFloat = 0.75
-
-    static let springDampening: CGFloat = 0.6
 
     let backgroundDim = UIControl()
 
     var contentViewController: UIViewController
+
+    var menuLeftConstraint: NSLayoutConstraint?
 
     var menuRightConstraint: NSLayoutConstraint?
 
@@ -42,7 +42,7 @@ open class MenuDrawerViewController: UIViewController {
 
         animateBackgroundDim(duration: duration, intoView: animateIntoView)
 
-        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: MenuDrawerViewController.springDampening, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
@@ -60,12 +60,9 @@ open class MenuDrawerViewController: UIViewController {
         view.addSubview(viewController.view)
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[menuView]|", options: [], metrics: nil, views: ["menuView": viewController.view]))
 
-        let widthConstraint = NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: MenuDrawerViewController.menuWidthPercentage, constant: 0)
-        widthConstraint.priority = UILayoutPriorityDefaultHigh
-        view.addConstraint(widthConstraint)
-
-        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
+        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: -menuWidth())
         view.addConstraint(leftConstraint)
+        menuLeftConstraint = leftConstraint
 
         let menuConstraint = NSLayoutConstraint(item: viewController.view, attribute: .right, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
         view.addConstraint(menuConstraint)
@@ -103,11 +100,26 @@ open class MenuDrawerViewController: UIViewController {
         }
     }
 
+    func menuWidth() -> CGFloat {
+        return ceil(view.frame.width * MenuDrawerViewController.menuWidthPercentage)
+    }
+
     open override func viewDidLoad() {
         super.viewDidLoad()
 
         addContentViewController(contentViewController)
         addMenuViewController(menuViewController)
         addBackgroundDim()
+    }
+
+    open override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        let menuIsClosed = (menuRightConstraint?.constant == 0)
+        let width = menuWidth()
+        let leftConstant = (menuIsClosed) ? -width : 0
+        let rightConstant = (menuIsClosed) ? 0 : width
+        menuLeftConstraint?.constant = leftConstant
+        menuRightConstraint?.constant = rightConstant
     }
 }
