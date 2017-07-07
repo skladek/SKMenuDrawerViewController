@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentViewController" customModule="SampleApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="XDn-vM-sGq" id="YFb-AX-OGD"/>
                 <outlet property="view" destination="yGM-6A-f5s" id="ciP-zV-acm"/>
             </connections>
         </placeholder>
@@ -19,22 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjA-0T-DMF">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XDn-vM-sGq">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <state key="normal" title="Toggle Menu">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="menuButtonTapped" destination="-1" eventType="touchUpInside" id="Ooh-v5-DiE"/>
-                    </connections>
-                </button>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="UjA-0T-DMF" secondAttribute="trailing" id="XNY-vX-Iik"/>
-                <constraint firstItem="UjA-0T-DMF" firstAttribute="leading" secondItem="yGM-6A-f5s" secondAttribute="leading" id="XZp-zR-iM6"/>
-                <constraint firstItem="UjA-0T-DMF" firstAttribute="top" secondItem="yGM-6A-f5s" secondAttribute="top" id="nkZ-T4-Tlf"/>
-                <constraint firstAttribute="bottom" secondItem="UjA-0T-DMF" secondAttribute="bottom" id="xr9-rK-fwj"/>
+                <constraint firstItem="XDn-vM-sGq" firstAttribute="leading" secondItem="yGM-6A-f5s" secondAttribute="leading" id="BJQ-Qz-X23"/>
+                <constraint firstAttribute="bottom" secondItem="XDn-vM-sGq" secondAttribute="bottom" id="Ecb-l9-pdR"/>
+                <constraint firstItem="XDn-vM-sGq" firstAttribute="top" secondItem="yGM-6A-f5s" secondAttribute="top" id="Tvo-SU-k5d"/>
+                <constraint firstAttribute="trailing" secondItem="XDn-vM-sGq" secondAttribute="trailing" id="bEF-qa-3JI"/>
             </constraints>
             <point key="canvasLocation" x="-60" y="-26"/>
         </view>
