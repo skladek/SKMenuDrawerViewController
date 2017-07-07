@@ -21,21 +21,30 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="26L-6j-kMb">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="bQD-3f-cuZ"/>
                     </connections>
                 </tableView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCO-av-6GN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <items>
+                        <navigationItem id="6tb-Nk-K9S"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="26L-6j-kMb" firstAttribute="top" secondItem="JwL-2s-Gac" secondAttribute="top" id="KXS-dQ-ZvC"/>
+                <constraint firstItem="dCO-av-6GN" firstAttribute="leading" secondItem="JwL-2s-Gac" secondAttribute="leading" id="3q7-gH-wq3"/>
+                <constraint firstAttribute="trailing" secondItem="dCO-av-6GN" secondAttribute="trailing" id="Go4-xb-eC9"/>
                 <constraint firstItem="26L-6j-kMb" firstAttribute="leading" secondItem="JwL-2s-Gac" secondAttribute="leading" id="MyG-Gs-jiL"/>
                 <constraint firstAttribute="trailing" secondItem="26L-6j-kMb" secondAttribute="trailing" id="PoQ-lN-DWc"/>
                 <constraint firstAttribute="bottom" secondItem="26L-6j-kMb" secondAttribute="bottom" id="cOr-gw-Cqf"/>
+                <constraint firstItem="26L-6j-kMb" firstAttribute="top" secondItem="dCO-av-6GN" secondAttribute="bottom" id="oDh-XH-Kct"/>
+                <constraint firstItem="dCO-av-6GN" firstAttribute="top" secondItem="JwL-2s-Gac" secondAttribute="top" id="v5W-kw-E6u"/>
             </constraints>
-            <point key="canvasLocation" x="-86" y="-185"/>
+            <point key="canvasLocation" x="-86.5" y="-185.5"/>
         </view>
     </objects>
 </document>

@@ -1,6 +1,6 @@
 @testable import SKMenuDrawerViewController
 
-class MockMenuDrawerViewController: MenuDrawerViewController {
+class MockMenuDrawerViewController: MenuDrawerViewController<MockMenuViewController> {
     var addContentViewControllerCalled = false
     var fadeFromToCalled = false
 
