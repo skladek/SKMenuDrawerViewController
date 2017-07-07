@@ -2,19 +2,27 @@ import Foundation
 
 open class MenuDrawerViewController: UIViewController {
 
-    static let animationDuration = 0.33
+    // MARK: Static Variables
+
+    static let animationDuration = 0.25
 
     static let menuWidthPercentage: CGFloat = 0.75
 
-    static let springDampening: CGFloat = 0.6
+    // MARK: Internal Variables
 
     let backgroundDim = UIControl()
 
     var contentViewController: UIViewController
 
+    var menuIsOpen = false
+
+    var menuLeftConstraint: NSLayoutConstraint?
+
     var menuRightConstraint: NSLayoutConstraint?
 
     let menuViewController: UIViewController
+
+    // MARK: Initializers
 
     public init(contentViewController: UIViewController, menuViewController: UIViewController) {
         self.contentViewController = contentViewController
@@ -27,25 +35,25 @@ open class MenuDrawerViewController: UIViewController {
         return nil
     }
 
+    // MARK: Public Methods
+
     open override func setRootContentViewController(_ viewController: UIViewController) {
         addContentViewController(viewController)
         fadeFrom(contentViewController, to: viewController)
     }
 
     open override func toggleMenu() {
-        let animateIntoView = (menuRightConstraint?.constant == 0)
-
-        let menuOffset = (animateIntoView) ? ceil(view.frame.width * 0.75) : 0
-        menuRightConstraint?.constant = menuOffset
-
+        menuIsOpen = !menuIsOpen
         let duration = MenuDrawerViewController.animationDuration
+        animateBackgroundDim(duration: duration)
+        view.setNeedsLayout()
 
-        animateBackgroundDim(duration: duration, intoView: animateIntoView)
-
-        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: MenuDrawerViewController.springDampening, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+
+    // MARK: Internal Methods
 
     func addContentViewController(_ viewController: UIViewController) {
         addChildViewController(viewController)
@@ -60,12 +68,9 @@ open class MenuDrawerViewController: UIViewController {
         view.addSubview(viewController.view)
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[menuView]|", options: [], metrics: nil, views: ["menuView": viewController.view]))
 
-        let widthConstraint = NSLayoutConstraint(item: viewController.view, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: MenuDrawerViewController.menuWidthPercentage, constant: 0)
-        widthConstraint.priority = UILayoutPriorityDefaultHigh
-        view.addConstraint(widthConstraint)
-
-        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
+        let leftConstraint = NSLayoutConstraint(item: viewController.view, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: -menuWidth())
         view.addConstraint(leftConstraint)
+        menuLeftConstraint = leftConstraint
 
         let menuConstraint = NSLayoutConstraint(item: viewController.view, attribute: .right, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0)
         view.addConstraint(menuConstraint)
@@ -84,8 +89,8 @@ open class MenuDrawerViewController: UIViewController {
         backgroundDim.addTarget(self, action: #selector(toggleMenu), for: .touchUpInside)
     }
 
-    func animateBackgroundDim(duration: TimeInterval, intoView: Bool) {
-        let endingAlpha: CGFloat = (intoView) ? 1.0 : 0.0
+    func animateBackgroundDim(duration: TimeInterval) {
+        let endingAlpha: CGFloat = (menuIsOpen) ? 1.0 : 0.0
 
         UIView.animate(withDuration: duration) {
             self.backgroundDim.alpha = endingAlpha
@@ -103,11 +108,27 @@ open class MenuDrawerViewController: UIViewController {
         }
     }
 
+    func menuWidth() -> CGFloat {
+        return ceil(view.frame.width * MenuDrawerViewController.menuWidthPercentage)
+    }
+
+    // MARK: UIViewController Methods
+
     open override func viewDidLoad() {
         super.viewDidLoad()
 
         addContentViewController(contentViewController)
         addMenuViewController(menuViewController)
         addBackgroundDim()
+    }
+
+    open override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        let width = menuWidth()
+        let leftConstant = (menuIsOpen) ? 0 : -width
+        let rightConstant = (menuIsOpen) ? width : 0
+        menuLeftConstraint?.constant = leftConstant
+        menuRightConstraint?.constant = rightConstant
     }
 }
