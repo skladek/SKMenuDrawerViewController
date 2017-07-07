@@ -1,12 +1,12 @@
 import Foundation
 
-open class MenuDrawerViewController: UIViewController {
+open class MenuDrawerViewController<T: UIViewController>: UIViewController where T: MenuViewControllerProtocol {
 
     // MARK: Static Variables
 
-    static let animationDuration = 0.25
+    let animationDuration = 0.25
 
-    static let menuWidthPercentage: CGFloat = 0.75
+    let menuWidthPercentage: CGFloat = 0.75
 
     // MARK: Internal Variables
 
@@ -24,8 +24,8 @@ open class MenuDrawerViewController: UIViewController {
 
     // MARK: Initializers
 
-    public init(contentViewController: UIViewController, menuViewController: UIViewController) {
-        self.contentViewController = contentViewController
+    public init(menuViewController: T) {
+        self.contentViewController = menuViewController.initialContentViewController()
         self.menuViewController = menuViewController
 
         super.init(nibName: nil, bundle: nil)
@@ -44,7 +44,7 @@ open class MenuDrawerViewController: UIViewController {
 
     open override func toggleMenu() {
         menuIsOpen = !menuIsOpen
-        let duration = MenuDrawerViewController.animationDuration
+        let duration = animationDuration
         animateBackgroundDim(duration: duration)
         view.setNeedsLayout()
 
@@ -98,7 +98,7 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     func fadeFrom(_ fromViewController: UIViewController, to toViewController: UIViewController) {
-        UIView.animate(withDuration: MenuDrawerViewController.animationDuration, animations: {
+        UIView.animate(withDuration: animationDuration, animations: {
             fromViewController.view.alpha = 0.0
         }) { [weak self] (_) in
             fromViewController.view.removeFromSuperview()
@@ -109,7 +109,7 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     func menuWidth() -> CGFloat {
-        return ceil(view.frame.width * MenuDrawerViewController.menuWidthPercentage)
+        return ceil(view.frame.width * menuWidthPercentage)
     }
 
     // MARK: UIViewController Methods
