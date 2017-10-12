@@ -37,12 +37,13 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
 
     // MARK: Public Methods
 
-    open override func setRootContentViewController(_ viewController: UIViewController) {
+    open func setRootContentViewController(_ viewController: UIViewController) {
         addContentViewController(viewController)
         fadeFrom(contentViewController, to: viewController)
     }
 
-    open override func toggleMenu() {
+    @objc
+    open func toggleMenu() {
         menuIsOpen = !menuIsOpen
         let duration = animationDuration
         animateBackgroundDim(duration: duration)
@@ -100,12 +101,12 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
     func fadeFrom(_ fromViewController: UIViewController, to toViewController: UIViewController) {
         UIView.animate(withDuration: animationDuration, animations: {
             fromViewController.view.alpha = 0.0
-        }) { [weak self] (_) in
+        }, completion: { [weak self] (_) in
             fromViewController.view.removeFromSuperview()
             self?.contentViewController.willMove(toParentViewController: nil)
             self?.contentViewController.removeFromParentViewController()
             self?.contentViewController = toViewController
-        }
+        })
     }
 
     func menuWidth() -> CGFloat {
