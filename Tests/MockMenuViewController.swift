@@ -8,8 +8,4 @@ class MockMenuViewController: UIViewController, MenuViewControllerProtocol {
 
         return UIViewController()
     }
-
-    func setRootContentViewController(_ viewController: UIViewController) {}
-
-    func toggleMenu() {}
 }
