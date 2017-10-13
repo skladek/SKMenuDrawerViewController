@@ -6,33 +6,31 @@ import Quick
 
 class UIViewControllerSpec: QuickSpec {
     override func spec() {
-        var childViewController: UIViewController!
-        var unitUnderTest: MockUIViewController!
+        var menuDrawerViewController: MockMenuDrawerViewController!
+        var unitUnderTest: MockMenuViewController!
 
         describe("UIViewController") {
-            context("toggleMenu(animated:)") {
-                beforeEach {
-                    childViewController = UIViewController()
-                    unitUnderTest = MockUIViewController()
-                    unitUnderTest.addChildViewController(childViewController)
-                }
-
-                it("Should call toggleMenu on the parent view controller") {
-                    childViewController.toggleMenu()
-                    expect(unitUnderTest.toggleMenuCalled).to(beTrue())
-                }
+            beforeEach {
+                unitUnderTest = MockMenuViewController()
             }
 
             context("setRootContentViewController(_:)") {
-                beforeEach {
-                    childViewController = UIViewController()
-                    unitUnderTest = MockUIViewController()
-                    unitUnderTest.addChildViewController(childViewController)
-                }
+                it("Should call setRootContentViewControllerOnMenuViewController on the menu drawer view controller") {
+                    menuDrawerViewController = MockMenuDrawerViewController(menuViewController: unitUnderTest)
+                    menuDrawerViewController.viewDidLoad()
+                    unitUnderTest.setRootContentViewController(UIViewController())
 
-                it("Should call setRootContentViewController on the parent view controller") {
-                    childViewController.setRootContentViewController(UIViewController())
-                    expect(unitUnderTest.setRootViewControllerCalled).to(beTrue())
+                    expect(menuDrawerViewController.setRootContentViewControllerCalled).to(beTrue())
+                }
+            }
+
+            context("toggleMenu()") {
+                it("Should call toggleMenuOnMenuViewController on the menu drawer view controller") {
+                    menuDrawerViewController = MockMenuDrawerViewController(menuViewController: unitUnderTest)
+                    menuDrawerViewController.viewDidLoad()
+                    unitUnderTest.toggleMenu()
+
+                    expect(menuDrawerViewController.toggleMenuCalled).to(beTrue())
                 }
             }
         }

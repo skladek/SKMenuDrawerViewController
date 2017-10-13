@@ -1,6 +1,6 @@
 import Foundation
 
-open class MenuDrawerViewController<T: UIViewController>: UIViewController where T: MenuViewControllerProtocol {
+open class MenuDrawerViewController: UIViewController {
 
     // MARK: Static Variables
 
@@ -24,8 +24,12 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
 
     // MARK: Initializers
 
-    public init(menuViewController: T) {
+    public init?(menuViewController: MenuViewControllerProtocol) {
         self.contentViewController = menuViewController.initialContentViewController()
+
+        guard let menuViewController = menuViewController as? UIViewController else {
+            return nil
+        }
         self.menuViewController = menuViewController
 
         super.init(nibName: nil, bundle: nil)
@@ -37,12 +41,13 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
 
     // MARK: Public Methods
 
-    open override func setRootContentViewController(_ viewController: UIViewController) {
+    func setRootContentViewControllerOnMenuViewController(_ viewController: UIViewController) {
         addContentViewController(viewController)
         fadeFrom(contentViewController, to: viewController)
     }
 
-    open override func toggleMenu() {
+    @objc
+    func toggleMenuOnMenuViewController() {
         menuIsOpen = !menuIsOpen
         let duration = animationDuration
         animateBackgroundDim(duration: duration)
@@ -86,7 +91,7 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: ["view": backgroundDim]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: ["view": backgroundDim]))
         backgroundDim.alpha = 0
-        backgroundDim.addTarget(self, action: #selector(toggleMenu), for: .touchUpInside)
+        backgroundDim.addTarget(self, action: #selector(toggleMenuOnMenuViewController), for: .touchUpInside)
     }
 
     func animateBackgroundDim(duration: TimeInterval) {
@@ -100,12 +105,12 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
     func fadeFrom(_ fromViewController: UIViewController, to toViewController: UIViewController) {
         UIView.animate(withDuration: animationDuration, animations: {
             fromViewController.view.alpha = 0.0
-        }) { [weak self] (_) in
+        }, completion: { [weak self] (_) in
             fromViewController.view.removeFromSuperview()
             self?.contentViewController.willMove(toParentViewController: nil)
             self?.contentViewController.removeFromParentViewController()
             self?.contentViewController = toViewController
-        }
+        })
     }
 
     func menuWidth() -> CGFloat {
