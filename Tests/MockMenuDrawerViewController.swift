@@ -1,6 +1,19 @@
 @testable import SKMenuDrawerViewController
 
-class MockMenuDrawerViewController: MenuDrawerViewController<MockMenuViewController> {
+class MockMenuDrawerViewController: MenuDrawerViewController {
+    var setRootContentViewControllerCalled = false
+    var toggleMenuCalled = false
+
+    override func setRootContentViewControllerOnMenuViewController(_ viewController: UIViewController) {
+        setRootContentViewControllerCalled = true
+    }
+
+    override func toggleMenuOnMenuViewController() {
+        toggleMenuCalled = true
+    }
+}
+
+class MockMenuDrawerViewControllerWithoutUIViewControllerOverrides: MenuDrawerViewController {
     var addContentViewControllerCalled = false
     var fadeFromToCalled = false
 
