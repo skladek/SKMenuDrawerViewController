@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		14416D2D1F0D35A300E0065C /* SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14416D231F0D35A300E0065C /* SKMenuDrawerViewController.framework */; };
 		14416D441F0D35C500E0065C /* SKMenuDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14B4A8791F9110B20051ACA0 /* UIViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B4A8781F9110B20051ACA0 /* UIViewControllerSpec.swift */; };
 		14D1EEC01F0FDCDC005781E4 /* MenuViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1EEBF1F0FDCDC005781E4 /* MenuViewControllerProtocol.swift */; };
 		14D1EEC21F0FDE27005781E4 /* MockMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D1EEC11F0FDE27005781E4 /* MockMenuViewController.swift */; };
 		14F6923B1F0D4DB500564955 /* MenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */; };
 		14F692B11F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */; };
 		14F692B31F0DB66700564955 /* MockMenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */; };
 		14F692C51F0E87D400564955 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692C41F0E87D400564955 /* UIViewController.swift */; };
-		14F692CA1F0E8D3A00564955 /* MockUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692C91F0E8D3A00564955 /* MockUIViewController.swift */; };
-		14F692CB1F0E8D3E00564955 /* UIViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F692C71F0E8CF100564955 /* UIViewControllerSpec.swift */; };
 		3520D912864AA02A0333C13D /* Pods_SKMenuDrawerViewControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */; };
 		37C455A6C4E40B01CCC88290 /* Pods_SKMenuDrawerViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77286706E33C89B43BAD2EB /* Pods_SKMenuDrawerViewController.framework */; };
 /* End PBXBuildFile section */
@@ -37,14 +36,13 @@
 		14416D3E1F0D35C500E0065C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14416D3F1F0D35C500E0065C /* SKMenuDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMenuDrawerViewController.h; sourceTree = "<group>"; };
 		14416D411F0D35C500E0065C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14B4A8781F9110B20051ACA0 /* UIViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpec.swift; sourceTree = "<group>"; };
 		14D1EEBF1F0FDCDC005781E4 /* MenuViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewControllerProtocol.swift; sourceTree = "<group>"; };
 		14D1EEC11F0FDE27005781E4 /* MockMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMenuViewController.swift; sourceTree = "<group>"; };
 		14F6923A1F0D4DB500564955 /* MenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewController.swift; sourceTree = "<group>"; };
 		14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewControllerSpec.swift; sourceTree = "<group>"; };
 		14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMenuDrawerViewController.swift; sourceTree = "<group>"; };
 		14F692C41F0E87D400564955 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		14F692C71F0E8CF100564955 /* UIViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpec.swift; sourceTree = "<group>"; };
-		14F692C91F0E8D3A00564955 /* MockUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUIViewController.swift; sourceTree = "<group>"; };
 		24C670DACC7796B8E34C57CD /* Pods_SKMenuDrawerViewControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SKMenuDrawerViewControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB7707B19A66C5EF62FDB1B /* Pods-SKMenuDrawerViewControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewControllerTests/Pods-SKMenuDrawerViewControllerTests.release.xcconfig"; sourceTree = "<group>"; };
 		63EC4362145116E7550E8A55 /* Pods-SKMenuDrawerViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SKMenuDrawerViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-SKMenuDrawerViewController/Pods-SKMenuDrawerViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,8 +120,7 @@
 				14F692B01F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift */,
 				14F692B21F0DB66700564955 /* MockMenuDrawerViewController.swift */,
 				14D1EEC11F0FDE27005781E4 /* MockMenuViewController.swift */,
-				14F692C91F0E8D3A00564955 /* MockUIViewController.swift */,
-				14F692C71F0E8CF100564955 /* UIViewControllerSpec.swift */,
+				14B4A8781F9110B20051ACA0 /* UIViewControllerSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -202,18 +199,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Sean;
 				TargetAttributes = {
 					14416D221F0D35A300E0065C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MV978XDK83;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					14416D2B1F0D35A300E0065C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MV978XDK83;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -361,8 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14F692B31F0DB66700564955 /* MockMenuDrawerViewController.swift in Sources */,
-				14F692CB1F0E8D3E00564955 /* UIViewControllerSpec.swift in Sources */,
-				14F692CA1F0E8D3A00564955 /* MockUIViewController.swift in Sources */,
+				14B4A8791F9110B20051ACA0 /* UIViewControllerSpec.swift in Sources */,
 				14F692B11F0DADAC00564955 /* MenuDrawerViewControllerSpec.swift in Sources */,
 				14D1EEC21F0FDE27005781E4 /* MockMenuViewController.swift in Sources */,
 			);
@@ -389,7 +386,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -397,7 +396,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -443,7 +446,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -451,7 +456,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -499,7 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -521,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = skladek.SKMenuDrawerViewController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -534,7 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = skladek.SKMenuDrawerViewControllerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -547,7 +556,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = skladek.SKMenuDrawerViewControllerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

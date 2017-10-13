@@ -9,3 +9,9 @@ class MockMenuViewController: UIViewController, MenuViewControllerProtocol {
         return UIViewController()
     }
 }
+
+class MockNonViewControllerMenuItem: MenuViewControllerProtocol {
+    func initialContentViewController() -> UIViewController {
+        return UIViewController()
+    }
+}

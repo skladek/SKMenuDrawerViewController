@@ -1,6 +1,7 @@
 import Foundation
 
-open class MenuDrawerViewController<T: UIViewController>: UIViewController where T: MenuViewControllerProtocol {
+/// Provides the container view controller to controller the menu and content view controllers.
+open class MenuDrawerViewController: UIViewController {
 
     // MARK: Static Variables
 
@@ -24,33 +25,25 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
 
     // MARK: Initializers
 
-    public init(menuViewController: T) {
+    /// Initializes a view controller with a MenuViewControllerProtocol. If the menuViewController does not inherit from
+    /// UIViewController, the initializer will return nil.
+    ///
+    /// - Parameters:
+    ///   - menuViewController: The view controller to display on the menu side.
+    public init?(menuViewController: MenuViewControllerProtocol) {
         self.contentViewController = menuViewController.initialContentViewController()
+
+        guard let menuViewController = menuViewController as? UIViewController else {
+            return nil
+        }
         self.menuViewController = menuViewController
 
         super.init(nibName: nil, bundle: nil)
     }
 
+    /// Returns nil. This is not supported.
     required public init?(coder aDecoder: NSCoder) {
         return nil
-    }
-
-    // MARK: Public Methods
-
-    open override func setRootContentViewController(_ viewController: UIViewController) {
-        addContentViewController(viewController)
-        fadeFrom(contentViewController, to: viewController)
-    }
-
-    open override func toggleMenu() {
-        menuIsOpen = !menuIsOpen
-        let duration = animationDuration
-        animateBackgroundDim(duration: duration)
-        view.setNeedsLayout()
-
-        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
     }
 
     // MARK: Internal Methods
@@ -86,7 +79,7 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: ["view": backgroundDim]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: ["view": backgroundDim]))
         backgroundDim.alpha = 0
-        backgroundDim.addTarget(self, action: #selector(toggleMenu), for: .touchUpInside)
+        backgroundDim.addTarget(self, action: #selector(toggleMenuOnMenuViewController), for: .touchUpInside)
     }
 
     func animateBackgroundDim(duration: TimeInterval) {
@@ -100,20 +93,38 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
     func fadeFrom(_ fromViewController: UIViewController, to toViewController: UIViewController) {
         UIView.animate(withDuration: animationDuration, animations: {
             fromViewController.view.alpha = 0.0
-        }) { [weak self] (_) in
+        }, completion: { [weak self] (_) in
             fromViewController.view.removeFromSuperview()
             self?.contentViewController.willMove(toParentViewController: nil)
             self?.contentViewController.removeFromParentViewController()
             self?.contentViewController = toViewController
-        }
+        })
     }
 
     func menuWidth() -> CGFloat {
         return ceil(view.frame.width * menuWidthPercentage)
     }
 
+    func setRootContentViewControllerOnMenuViewController(_ viewController: UIViewController) {
+        addContentViewController(viewController)
+        fadeFrom(contentViewController, to: viewController)
+    }
+
+    @objc
+    func toggleMenuOnMenuViewController() {
+        menuIsOpen = !menuIsOpen
+        let duration = animationDuration
+        animateBackgroundDim(duration: duration)
+        view.setNeedsLayout()
+
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
     // MARK: UIViewController Methods
 
+    /// Adds the content and menu view controllers to the container view.
     open override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -122,6 +133,7 @@ open class MenuDrawerViewController<T: UIViewController>: UIViewController where
         addBackgroundDim()
     }
 
+    /// Lays out the menu drawer view.
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 

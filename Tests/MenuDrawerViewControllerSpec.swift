@@ -6,7 +6,7 @@ import Quick
 
 class MenuDrawerViewControllerSpec: QuickSpec {
     override func spec() {
-        var unitUnderTest: MenuDrawerViewController<MockMenuViewController>!
+        var unitUnderTest: MenuDrawerViewController!
 
         describe("MenuDrawerViewController") {
             context("init(contentViewController:menuViewController:)") {
@@ -24,6 +24,12 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 it("Should call initialContentViewController on the menu view controller") {
                     expect(menuViewController.initialContentViewControllerCalled).to(beTrue())
                 }
+
+                it("Should return nil if the menu view controller does not inherit from UIViewController") {
+                    let menuViewController = MockNonViewControllerMenuItem()
+                    unitUnderTest = MenuDrawerViewController(menuViewController: menuViewController)
+                    expect(unitUnderTest).to(beNil())
+                }
             }
 
             context("init?(coder:)") {
@@ -37,18 +43,18 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                 }
             }
 
-            context("setRootContentViewController(_:)") {
+            context("setRootContentViewControllerOnMenuViewController(_:)") {
                 beforeEach {
-                    unitUnderTest = MockMenuDrawerViewController(menuViewController: MockMenuViewController())
-                    unitUnderTest.setRootContentViewController(UIViewController())
+                    unitUnderTest = MockMenuDrawerViewControllerWithoutUIViewControllerOverrides(menuViewController: MockMenuViewController())
+                    unitUnderTest.setRootContentViewControllerOnMenuViewController(UIViewController())
                 }
 
                 it("Should call addContentViewController") {
-                    expect((unitUnderTest as! MockMenuDrawerViewController).addContentViewControllerCalled).to(beTrue())
+                    expect((unitUnderTest as! MockMenuDrawerViewControllerWithoutUIViewControllerOverrides).addContentViewControllerCalled).to(beTrue())
                 }
 
                 it("Should call fadeFromTo") {
-                    expect((unitUnderTest as! MockMenuDrawerViewController).fadeFromToCalled).to(beTrue())
+                    expect((unitUnderTest as! MockMenuDrawerViewControllerWithoutUIViewControllerOverrides).fadeFromToCalled).to(beTrue())
                 }
             }
 
