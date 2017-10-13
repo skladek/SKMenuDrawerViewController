@@ -1,5 +1,6 @@
 import Foundation
 
+/// Provides the container view controller to controller the menu and content view controllers.
 open class MenuDrawerViewController: UIViewController {
 
     // MARK: Static Variables
@@ -24,6 +25,11 @@ open class MenuDrawerViewController: UIViewController {
 
     // MARK: Initializers
 
+    /// Initializes a view controller with a MenuViewControllerProtocol. If the menuViewController does not inherit from
+    /// UIViewController, the initializer will return nil.
+    ///
+    /// - Parameters:
+    ///   - menuViewController: The view controller to display on the menu side.
     public init?(menuViewController: MenuViewControllerProtocol) {
         self.contentViewController = menuViewController.initialContentViewController()
 
@@ -35,27 +41,9 @@ open class MenuDrawerViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    /// Returns nil. This is not supported.
     required public init?(coder aDecoder: NSCoder) {
         return nil
-    }
-
-    // MARK: Public Methods
-
-    func setRootContentViewControllerOnMenuViewController(_ viewController: UIViewController) {
-        addContentViewController(viewController)
-        fadeFrom(contentViewController, to: viewController)
-    }
-
-    @objc
-    func toggleMenuOnMenuViewController() {
-        menuIsOpen = !menuIsOpen
-        let duration = animationDuration
-        animateBackgroundDim(duration: duration)
-        view.setNeedsLayout()
-
-        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
     }
 
     // MARK: Internal Methods
@@ -117,8 +105,26 @@ open class MenuDrawerViewController: UIViewController {
         return ceil(view.frame.width * menuWidthPercentage)
     }
 
+    func setRootContentViewControllerOnMenuViewController(_ viewController: UIViewController) {
+        addContentViewController(viewController)
+        fadeFrom(contentViewController, to: viewController)
+    }
+
+    @objc
+    func toggleMenuOnMenuViewController() {
+        menuIsOpen = !menuIsOpen
+        let duration = animationDuration
+        animateBackgroundDim(duration: duration)
+        view.setNeedsLayout()
+
+        UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
     // MARK: UIViewController Methods
 
+    /// Adds the content and menu view controllers to the container view.
     open override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -127,6 +133,7 @@ open class MenuDrawerViewController: UIViewController {
         addBackgroundDim()
     }
 
+    /// Lays out the menu drawer view.
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
