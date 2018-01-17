@@ -3,6 +3,11 @@ import Foundation
 /// Provides the container view controller to controller the menu and content view controllers.
 open class MenuDrawerViewController: UIViewController {
 
+    // MARK: Public Variables
+
+    /// The view controller used for the side menu.
+    public let menuViewController: UIViewController
+
     // MARK: Static Variables
 
     let animationDuration = 0.25
@@ -20,8 +25,6 @@ open class MenuDrawerViewController: UIViewController {
     var menuLeftConstraint: NSLayoutConstraint?
 
     var menuRightConstraint: NSLayoutConstraint?
-
-    let menuViewController: UIViewController
 
     // MARK: Initializers
 
