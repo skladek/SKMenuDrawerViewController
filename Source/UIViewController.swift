@@ -1,11 +1,13 @@
 import Foundation
 
+@objc
 public extension UIViewController {
 
     /// Sets the root content view controller on the menu view controller. This can be used to change the content
     /// view controller programatically.
     ///
     /// - Parameter viewController: The view controller to be changed to.
+    @objc
     public func setRootContentViewController(_ viewController: UIViewController) {
         if let rootViewController = self as? MenuDrawerViewController {
             rootViewController.setRootContentViewControllerOnMenuViewController(viewController)

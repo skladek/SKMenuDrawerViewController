@@ -1,11 +1,13 @@
 import Foundation
 
 /// Provides the container view controller to controller the menu and content view controllers.
+@objc
 open class MenuDrawerViewController: UIViewController {
 
     // MARK: Public Variables
 
     /// The view controller used for the side menu.
+    @objc
     public let menuViewController: UIViewController
 
     // MARK: Static Variables
@@ -33,6 +35,7 @@ open class MenuDrawerViewController: UIViewController {
     ///
     /// - Parameters:
     ///   - menuViewController: The view controller to display on the menu side.
+    @objc
     public init?(menuViewController: MenuViewControllerProtocol) {
         self.contentViewController = menuViewController.initialContentViewController()
 
@@ -45,6 +48,7 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     /// Returns nil. This is not supported.
+    @objc
     required public init?(coder aDecoder: NSCoder) {
         return nil
     }
@@ -128,6 +132,7 @@ open class MenuDrawerViewController: UIViewController {
     // MARK: UIViewController Methods
 
     /// Adds the content and menu view controllers to the container view.
+    @objc
     open override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -137,6 +142,7 @@ open class MenuDrawerViewController: UIViewController {
     }
 
     /// Lays out the menu drawer view.
+    @objc
     open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
