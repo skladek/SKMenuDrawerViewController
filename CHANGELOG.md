@@ -2,7 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 #### 1.x Releases
-- `1.1.x` Releases - [1.1.0](#110)
+- `1.1.x` Releases - [1.1.0](#110), [1.1.1](#111)
+
+## [1.1.1](https://github.com/skladek/SKMenuDrawerViewController/releases/tag/1.1.1)
+
+#### Updated
+- Deployment target reduced to 8.0.
 
 ## [1.1.0](https://github.com/skladek/SKMenuDrawerViewController/releases/tag/1.1.0)
 
