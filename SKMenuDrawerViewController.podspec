@@ -6,6 +6,6 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/skladek/SKMenuDrawerViewController'
   spec.authors = { 'Sean Kladek' => 'skladek@gmail.com' }
   spec.source = { :git => 'https://github.com/skladek/SKMenuDrawerViewController.git', :tag => spec.version }
-  spec.ios.deployment_target = '9.0'
+  spec.ios.deployment_target = '8.0'
   spec.source_files = 'Source/*.swift'
 end
