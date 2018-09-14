@@ -74,6 +74,20 @@ class MenuDrawerViewControllerSpec: QuickSpec {
                     unitUnderTest.toggleMenu()
                     expect(unitUnderTest.menuRightConstraint?.constant).to(equal(0))
                 }
+
+                it("Should call viewWillAppear and viewDidAppear on the menu view controller when opening") {
+                    unitUnderTest.menuIsOpen = false
+                    unitUnderTest.toggleMenu()
+                    expect(menuViewController.viewWillAppearCalled).to(beTrue())
+                    expect(menuViewController.viewDidAppearCalled).toEventually(beTrue())
+                }
+
+                it("Should call viewWillDisappear and viewDidDisappear on the menu view controller when closing") {
+                    unitUnderTest.menuIsOpen = true
+                    unitUnderTest.toggleMenu()
+                    expect(menuViewController.viewWillDisappearCalled).to(beTrue())
+                    expect(menuViewController.viewDidDisappearCalled).toEventually(beTrue())
+                }
             }
 
             context("addContentViewController(_:)") {

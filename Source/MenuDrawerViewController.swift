@@ -119,6 +119,12 @@ open class MenuDrawerViewController: UIViewController {
 
     @objc
     func toggleMenuOnMenuViewController() {
+        if menuIsOpen {
+            menuViewController.viewWillDisappear(true)
+        } else {
+            menuViewController.viewWillAppear(true)
+        }
+
         menuIsOpen = !menuIsOpen
         let duration = animationDuration
         animateBackgroundDim(duration: duration)
@@ -126,7 +132,13 @@ open class MenuDrawerViewController: UIViewController {
 
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseInOut, animations: {
             self.view.layoutIfNeeded()
-        }, completion: nil)
+        }, completion: { (_) in
+            if self.menuIsOpen {
+                self.menuViewController.viewDidAppear(true)
+            } else {
+                self.menuViewController.viewDidDisappear(true)
+            }
+        })
     }
 
     // MARK: UIViewController Methods
