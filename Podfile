@@ -5,7 +5,7 @@ inhibit_all_warnings!
 
 target 'SKMenuDrawerViewController' do
 	project 'SKMenuDrawerViewController.xcodeproj'
-	pod 'SwiftLint', '= 0.23.1'
+	pod 'SwiftLint', '= 0.27.0'
 end
 
 target 'SKMenuDrawerViewControllerTests' do
