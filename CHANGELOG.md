@@ -2,7 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 #### 1.x Releases
-- `1.1.x` Releases - [1.1.0](#110), [1.1.1](#111), [1.1.2](#1.1.2)
+- `1.1.x` Releases - [1.1.0](#110), [1.1.1](#111), [1.1.2](#1.1.2), [1.1.3](#1.1.3)
+
+## [1.1.3](https://github.com/skladek/SKMenuDrawerViewController/releases/tag/1.1.3)
+
+#### Fixed
+- An issue causing the expecte view lifecycle calls to not be made on the menu view controller when toggling the menu view controller.
 
 ## [1.1.2](https://github.com/skladek/SKMenuDrawerViewController/releases/tag/1.1.2)
 
