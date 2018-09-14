@@ -11,8 +11,8 @@ end
 target 'SKMenuDrawerViewControllerTests' do
 	workspace 'SKMenuDrawerViewController.xcworkspace'
 	project 'SKMenuDrawerViewController.xcodeproj'
-	pod 'Nimble', '= 7.0.2'
-	pod 'Quick', '= 1.2.0'
+	pod 'Nimble', '= 7.3.0'
+	pod 'Quick', '= 1.3.1'
 end
 
 target 'SampleApp' do
